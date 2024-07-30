@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+html {
+    font-size: 6.25%;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: var(--font-body);
+}
+
+/* All resets related to Images/Media */
+img,
+picture,
+canvas,
+map,
+area,
+svg,
+video,
+embed,
+source,
+object {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}

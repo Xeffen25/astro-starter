@@ -1,16 +1,29 @@
 ---
+import Preload from "@/components/global/preload.astro";
+import globalStyles from "@/styles/global/global.css?url";
 
+/* CSS assets should be inlined right before loading the component but javascript if non critical should be loaded after the dom at the end */
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang={Astro.currentLocale}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        {/* CRITICAL PRELOADS max: 6 (only recommended can be more) */}
+        <Preload file={globalStyles} />
+
+        {/* SEO */}
+        <title>Astro</title>
+
+        {/* CRITICAL assets */}
+        <link rel="stylesheet" href={globalStyles} />
+        {/* favicon */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+    <body>
+        <h1>Astro</h1>
+
+        {/* noncritical js */}
+    </body>
 </html>

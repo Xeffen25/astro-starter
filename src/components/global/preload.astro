@@ -1,0 +1,53 @@
+---
+const { file } = Astro.props;
+let asType, typeAttr, crossorigin;
+
+const extension = file.split(".").pop();
+switch (extension) {
+    case "css":
+        asType = "style";
+        break;
+
+    case "ts":
+    case "js":
+        asType = "script";
+        break;
+
+    case "mp3":
+        asType = "audio";
+        break;
+
+    case "mp4":
+    case "webm":
+        asType = "video";
+        break;
+
+    case "jpg":
+    case "jpeg":
+    case "png":
+    case "gif":
+    case "webp":
+    case "avif":
+        asType = "image";
+        break;
+
+    case "ttf":
+    case "woff":
+    case "woff2":
+        asType = "font";
+        typeAttr = extension;
+        crossorigin = "anonymous";
+        break;
+
+    default:
+        throw new Error("Unsuported file type for preloading");
+}
+---
+
+<link
+    rel="preload"
+    href={file}
+    as={asType}
+    type={typeAttr}
+    crossorigin={crossorigin}
+/>

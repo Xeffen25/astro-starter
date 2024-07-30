@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Heading";
+    font-display: swap;
+    /* font-style: normal*/
+    /* font-weight: 100 700; */
+    src: url("fonts/heading.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Body";
+    font-display: swap;
+    /* font-style: normal*/
+    /* font-weight: 100 700; */
+    src: url("fonts/body.woff2") format("woff2");
+}
