@@ -6,16 +6,20 @@
         "dev": "astro dev",
         "start": "astro dev",
         "build": "astro check && astro build",
-        "preview": "astro preview",
-        "astro": "astro"
+        "preview": "astro build && wrangler pages dev",
+        "astro": "astro",
+        "deploy": "astro build && wrangler pages deploy",
+        "cf-typegen": "wrangler types"
     },
     "dependencies": {
         "@astrojs/check": "^0.8.3",
         "@astrojs/cloudflare": "^11.0.1",
-        "astro": "^4.12.2",
+        "astro": "^4.12.3",
         "typescript": "^5.5.4"
     },
     "devDependencies": {
+        "@cloudflare/workers-types": "^4.20240725.0",
+        "wrangler": "^3.67.1",
         "@csstools/postcss-global-data": "^2.1.1",
         "autoprefixer": "^10.4.19",
         "cssnano": "^7.0.4",

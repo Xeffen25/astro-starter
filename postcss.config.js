@@ -5,7 +5,7 @@ export default {
         },
         "postcss-import": {},
         "postcss-custom-media": {},
+        autoprefixer: {},
+        cssnano: {},
     },
-    autoprefixer: {},
-    cssnano: {},
 };
